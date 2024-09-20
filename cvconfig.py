@@ -21,4 +21,3 @@ csv_delimiter = ','
 
 # ack_vuln parameters
 preset_name = 'All data'
-ack_comments = ''

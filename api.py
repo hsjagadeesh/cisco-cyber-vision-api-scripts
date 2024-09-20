@@ -119,8 +119,6 @@ def patch_route(session, route, json):
 
 
 def put_route(session, route, json):
-    #print(f"DEBUG: [PUT] Calling {route}")
-    #print(f"DEBUG: [PUT] Payload: {json}")
     return session.put(route, json=json)
 
 

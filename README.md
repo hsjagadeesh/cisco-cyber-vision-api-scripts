@@ -31,7 +31,7 @@ Groups can be added manually or using the group.py script
 
 2.1 use group.py with export option to get the csv file \
 ```python3 group.py -export``` \
-2.2 Add needed groups to the CSV file then use the import option of group.py scrypt
+2.2 Add needed groups to the CSV file then use the import option of group.py script
 
 ![](2021-11-16-21-01-03.png)
 
@@ -58,22 +58,22 @@ Groups can be added manually or using the group.py script
 
 6. Acknowledging vulnerabilities in bulk
 
-6.1 --export-affected-devices: use ack_vuln.py with export-affected-devices options to export vulnerable devices into CVS file. This script takes two additional parameters \
+6.1 --export-affected-devices: use ack_vuln.py with export-affected-devices options to export vulnerable devices into CSV file. This operation takes two additional parameters \
 a. --cve-id [mandatory] \
 b. --export-affected-devices-preset-name  [optional] if this value is not provided, it takes "All data" as default value \
 E.g., ``` python3 ack_vuln.py --export-affected-devices --cve-id=CVE-2014-0317 ```
 
-6.2 --ack-by-preset: use ack_vuln.py with ack-by-preset options to acknowledge vulnerable devices by preset name and cve. This script takes three additional parameters \
+6.2 --ack-by-preset: use ack_vuln.py with ack-by-preset options to acknowledge vulnerable devices by preset name and cve. This operation takes three additional parameters \
 a. --cve-id [mandatory] \
 b. --ack-by-preset-preset-name  [optional] if this value is not provided, it takes "All data" as default value \
-c. --ack-comments [optional] if this value is not provided, it takes default value of "Default acknowledge comment"
-E.g., ``` python3 ack_vuln.py --ack-by-preset --cve-id=CVE-2014-0317 --ack-comments="Testing Bulk Ack from Python"```
+c. --ack-comment [mandatory] 
+E.g., ``` python3 ack_vuln.py --ack-by-preset --cve-id=CVE-2014-0317 --ack-comment="Testing Bulk Ack from Python"```
 
-6.3 --ack-by-devices: use ack_vuln.py with ack-by-devices options to acknowledge vulnerable devices that were exported in first options. This script takes additional parameters \
+6.3 --ack-by-devices: use ack_vuln.py with ack-by-devices options to acknowledge vulnerable devices that were exported using the --export-affected-devices option. This operation takes additional parameters \
 a. --cve-id [mandatory] \
-b. --ack-comments [optional] if this value is not provided, it takes default value of "Default acknowledge comment"
+b. --ack-comment [mandatory] 
  
-E.g., ``` python3 ack_vuln.py --ack-by-devices --cve-id=CVE-2014-0317 --ack-comments="Testing Bulk Ack from Python"```
+E.g., ``` python3 ack_vuln.py --ack-by-devices --cve-id=CVE-2014-0317 --ack-comment="Testing Bulk Ack from Python"```
 
 Note: Above script does not refresh preset, if you need latest data then kindly refresh preset from GUI and then run above scripts. 
 ## Requirements
